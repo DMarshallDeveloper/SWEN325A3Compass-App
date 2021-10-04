@@ -3,4 +3,5 @@
     <string name="title">Location Finder</string>
     <string name="photo_of_compass_description">Photo of compass</string>
     <string name="start_finding">Start Finding!</string>
+    <string name="begin">Begin</string>
 </resources>

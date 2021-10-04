@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        Button button = (Button) findViewById(R.id.start_button);
+        Button button = (Button) findViewById(R.id.tutorial_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, TutorialActivity.class);
                 startActivity(intent);
             }
         });
