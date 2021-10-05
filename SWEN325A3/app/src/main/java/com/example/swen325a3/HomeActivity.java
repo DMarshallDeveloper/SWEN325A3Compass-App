@@ -19,12 +19,12 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager; //object to keep track of the sensors
     private ImageView compass; //compass image, the one we rotate
     private float DegreeStart = 0f;
-
     private final float[] accelerometerReading = new float[3];
     private final float[] magnetometerReading = new float[3];
-
     private final float[] rotationMatrix = new float[9];
     private final float[] orientationAngles = new float[3];
+
+
 
 
 
@@ -34,8 +34,15 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-
         this.compass = (ImageView) findViewById(R.id.main_compass);
+//
+//        Button button = (Button) findViewById(R.id.add_location_button);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, TutorialActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
     }
@@ -128,3 +135,7 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
 
 
 }
+
+//Note that in constructing the basic compass and getting it to spin I have drawn inspiration from both
+// https://www.codespeedy.com/simple-compass-code-with-android-studio/ and
+// https://developer.android.com/guide/topics/sensors/sensors_position#sensors-pos-orient
