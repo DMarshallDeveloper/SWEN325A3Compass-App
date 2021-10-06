@@ -42,13 +42,26 @@
         app:layout_constraintTop_toBottomOf="@+id/b_add_location_from_home" />
 
     <Button
+        android:id="@+id/b_plain_compass_from_home"
+        android:layout_width="306dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/compass"
+        app:layout_constraintEnd_toEndOf="@+id/main_compass"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/main_compass"
+        app:layout_constraintTop_toBottomOf="@+id/b_manage_locations_from_home" />
+
+    <Button
         android:id="@+id/b_tutorial_from_home"
         android:layout_width="140dp"
         android:layout_height="53dp"
         android:layout_marginTop="16dp"
         android:text="@string/help"
+        app:layout_constraintEnd_toStartOf="@+id/b_about_from_home"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/main_compass"
-        app:layout_constraintTop_toBottomOf="@+id/b_manage_locations_from_home" />
+        app:layout_constraintTop_toBottomOf="@+id/b_plain_compass_from_home" />
 
     <Button
         android:id="@+id/b_about_from_home"
@@ -57,8 +70,6 @@
         android:layout_marginTop="16dp"
         android:text="@string/about"
         app:layout_constraintEnd_toEndOf="@+id/main_compass"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/b_tutorial_from_home"
-        app:layout_constraintTop_toBottomOf="@+id/b_manage_locations_from_home" />
+        app:layout_constraintTop_toBottomOf="@+id/b_plain_compass_from_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

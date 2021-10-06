@@ -1,14 +1,17 @@
 package com.example.swen325a3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +27,12 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
     private final float[] rotationMatrix = new float[9];
     private final float[] orientationAngles = new float[3];
 
-
+    //buttons
+    Button addLocationButton;
+    Button manageLocationsButton;
+    Button tutorialButton;
+    Button aboutButton;
+    Button compassButton;
 
 
 
@@ -35,16 +43,60 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
         getSupportActionBar().hide();
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         this.compass = (ImageView) findViewById(R.id.main_compass);
-//
-//        Button button = (Button) findViewById(R.id.add_location_button);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, TutorialActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
+        setButtonListeners(this.addLocationButton, this.manageLocationsButton, this.compassButton, this.tutorialButton, this.aboutButton);
 
 
+
+    }
+
+    /**
+     * Function to set the listeners for all of the buttons on this screen
+     * @param addLocation button to go to the add location screen
+     * @param manageLocations button to go to the manage locations screen
+     * @param tutorial button to go to the tutorial screen
+     * @param about button to go to the about screen
+     */
+    private void setButtonListeners(Button addLocation, Button manageLocations, Button compass, Button tutorial, Button about){
+        addLocation = (Button) findViewById(R.id.b_add_location_from_home);
+        addLocation.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, AddLocationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        manageLocations = (Button) findViewById(R.id.b_manage_locations_from_home);
+        manageLocations.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ManageLocationsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        compass = (Button) findViewById(R.id.b_plain_compass_from_home);
+        compass.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, PlainCompassActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tutorial = (Button) findViewById(R.id.b_tutorial_from_home);
+        tutorial.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, TutorialActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        about = (Button) findViewById(R.id.b_about_from_home);
+        about.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -106,7 +158,7 @@ public class HomeActivity extends AppCompatActivity implements SensorEventListen
         ra.setFillAfter(true);
 
         // set how long the animation for the compass image will take place
-        ra.setDuration(100);
+        ra.setDuration(0);
 
         // Start animation of compass image
         this.compass.startAnimation(ra);

@@ -26,26 +26,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.041" />
 
+
     <Button
         android:id="@+id/b_home_from_tutorial"
-        android:layout_width="243dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="120dp"
-        android:text="@string/begin"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:backgroundTint="@color/button_background"
+        android:layout_width="306dp"
+        android:layout_height="53dp"
+        android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tutorial_text" />
 
     <TextView
         android:id="@+id/tutorial_text"
         android:layout_width="246dp"
         android:layout_height="375dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/b_home_from_tutorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tutorial_title" />

@@ -9,5 +9,6 @@
     <string name="manage_active_locations">Manage Active Locations</string>
     <string name="help">Help</string>
     <string name="about">About</string>
-    <string name="return_home">Return to Home</string>
+    <string name="home">Home</string>
+    <string name="compass">Compass</string>
 </resources>
